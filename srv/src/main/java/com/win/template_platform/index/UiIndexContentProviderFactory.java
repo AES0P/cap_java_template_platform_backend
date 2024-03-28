@@ -1,6 +1,7 @@
 package com.win.template_platform.index;
 
 import java.io.PrintWriter;
+
 import com.sap.cds.adapter.IndexContentProvider;
 import com.sap.cds.adapter.IndexContentProviderFactory;
 
@@ -43,6 +44,8 @@ public class UiIndexContentProviderFactory implements IndexContentProviderFactor
             writer.print(ENDPOINT_START);
             writer.printf(ENDPOINT, contextPath + "fiori.html?sap-ui-xx-viewCache=false",
                     "template -lunchpad");
+            writer.printf(ENDPOINT, contextPath + "/swagger/index.html", "Swagger UI");
+            writer.print(ENDPOINT_END);
             writer.print(ENDPOINT_END);
         }
     }

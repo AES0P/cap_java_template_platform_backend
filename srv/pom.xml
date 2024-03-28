@@ -50,6 +50,19 @@
 			<artifactId>cds-adapter-api</artifactId>
 		</dependency>
 		
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>2.2.0</version>
+		 </dependency>
+		 
+		<!-- https://mvnrepository.com/artifact/com.profesorfalken/jPowerShell -->
+		<dependency>
+			<groupId>com.profesorfalken</groupId>
+			<artifactId>jPowerShell</artifactId>
+			<version>3.1.1</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -127,6 +140,7 @@
 							<commands>
 								<command>build --for java</command>
 								<command>deploy --to sqlite --dry &gt; "${project.basedir}/src/main/resources/schema-sqlite.sql"</command>
+								<command>compile srv/books-service.cds -2 openapi --openapi:url /api/books &gt; "${project.basedir}/src/main/resources/swagger/openapi.json"</command>
 							</commands>
 						</configuration>
 					</execution>
