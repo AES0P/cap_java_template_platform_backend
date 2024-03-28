@@ -1,0 +1,28 @@
+### Get all books
+GET http://localhost:8080/api/books/Books HTTP/1.1
+
+### Create a book
+POST http://localhost:8080/api/books/Books HTTP/1.1
+Content-Type: application/json
+
+{
+  "title": "Wuthering Heights",
+  "stock": 0,
+  "isbn" :"test-isbn",
+  "descr": "Wuthering Heights, Emily Brontë's only novel, was published in 1847 under the pseudonym Ellis Bell. It was written between October 1845 and June 1846. Wuthering Heights and Anne Brontë's Agnes Grey were accepted by publisher Thomas Newby before the success of their sister Charlotte's novel Jane Eyre. After Emily's death, Charlotte edited the manuscript of Wuthering Heights and arranged for the edited version to be published as a posthumous second edition in 1850."
+}
+
+### Get the book
+GET http://localhost:8080/api/books/Books(ID=4a519e61-3c3a-4bd9-ab12-d7e0c5329933) HTTP/1.1
+
+### Update the book
+PATCH http://localhost:8080/api/books/Books(ID=4a519e61-3c3a-4bd9-ab12-d7e0c5329933) HTTP/1.1
+content-type: application/json
+
+{
+  "descr": "Emily Brontë"
+}
+
+### Delete the book
+DELETE http://localhost:8080/api/books/Books(ID=4a519e61-3c3a-4bd9-ab12-d7e0c5329933) HTTP/1.1
+content-type: application/json
