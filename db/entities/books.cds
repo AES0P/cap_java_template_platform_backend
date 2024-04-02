@@ -15,7 +15,7 @@ entity Books : cuid, managed {
     stock        : Integer;
     price        : temp.price;
     currency     : Currency;
-    rating       : temp.rating_enum;
+    rating       : temp.rating;
     review       : Association to many temp.Reviews;
     isReviewable : temp.Tech_Boolean not null default true;
 }
